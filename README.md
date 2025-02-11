@@ -1,25 +1,21 @@
 # healthcare-analytics
-Let's play around with some sample healthcare data
+Let's play around with some sample healthcare data by answering the prompts below
 
-PROMPT 1
+## PROMPT 1
 
-On querying the providers and encounters_details tables, we see that there are 23 distinct providers in each table. However, the providers table contains a missing npi belonging to “Ortega-Garcia, Jose-Raul”, while the encounters_details table contains the missing npi (1992787402). Since this is the only provider without an npi, I have manually assigned npi 1992787402 to Jose-Raul Ortega-Garcia.
+Given the data provided:
+1a) construct an aggregate provider table(s) (using NPI as a unique identifier). This table should seek to:
+1. Allow Product, Clinical, and Operations teams to easily gain insight and answer business questions about these providers, and
+2. Serve as a feature store to feed machine learning models
 
-The final table is at the npi grain, where I have calculated the following metrics:
+Examples of questions users might want to answer are listed below:
 
-top_procedure: This is the most successful procedure performed by each provider, using their success rate as a ranking mechanism. If 2 or more procedures have the same success rate, then the number of times the provider has done the procedure takes precedence, and if that is also equal, then the generally more common procedure wins. This will help see which procedure each provider excels at.
-
-total_encounters: Total number of encounters for that provider.
-
-incoming_demand: The total number of patients that need that particular top_procedure who live in the same zip code as the provider. Can be used along with other metrics to decide where to route incoming demand.
-
-provider_avg_cost: This is the average amount they’ve charged per encounter, derived directly from the encounters_details table. This metric helps to figure out which providers could be the most cost effective.
-
-adverse_event_count: Number of encounters with adverse events.
-
-provider_success_rate: This is the ratio of successful encounters to all encounters for a provider. A “successful” encounter is defined as one with no entry in the adverse_events table. This metric could be used to ascertain which providers are getting the most optimal results for their patients.
-
-in_network_employers: Count of distinct employers where the provider is in-network. Can be used along with other metrics to check if the size of the network needs to expand.
+● Which providers are likely to be the most cost effective?
+● Do certain providers specialize or excel in particular types of procedures?
+● How might we understand which providers garner the most optimal results for their
+patients?
+● How will we know when we need to expand our network of providers?
+● Where should we ideally be routing incoming demand?
 
 PROMPT 2
 
