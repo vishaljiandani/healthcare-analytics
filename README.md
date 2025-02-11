@@ -11,9 +11,13 @@ Construct an aggregate provider table(s) (using NPI as a unique identifier). Thi
 Examples of questions users might want to answer are listed below:
 
 ● Which providers are likely to be the most cost effective?
+
 ● Do certain providers specialize or excel in particular types of procedures?
+
 ● How might we understand which providers garner the most optimal results for their patients?
+
 ● How will we know when we need to expand our network of providers?
+
 ● Where should we ideally be routing incoming demand?
 
 ### PROMPT 2
