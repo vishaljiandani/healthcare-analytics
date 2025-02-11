@@ -5,6 +5,7 @@ Let's play around with some sample healthcare data by answering the prompts belo
 
 Given the data provided:
 Construct an aggregate provider table(s) (using NPI as a unique identifier). This table should seek to:
+
 1. Allow Product, Clinical, and Operations teams to easily gain insight and answer business questions about these providers, and
 2. Serve as a feature store to feed machine learning models
 
